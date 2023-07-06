@@ -9,4 +9,47 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    keys = {
+      {
+        "<leader>T",
+        "<CMD>TodoTelescope<CR>",
+        desc = "Open TODOs in Telescope.",
+      },
+    },
+    event = "User AstroFile",
+  },
+  {
+    "mbbill/undotree",
+    -- opts = {},
+    init = function()
+      vim.g.undotree_HelpLine = 0
+      vim.g.undotree_ShortIndicators = 1
+    end,
+    event = "User AstroFile",
+    keys = {
+      { "<leader>U", ":UndotreeToggle<CR>" },
+    },
+  },
+  {
+    "github/copilot.vim",
+    event = "User LazyDone",
+    setup = function()
+      -- vim.g.copilot_filetypes = { xml = false }
+      vim.g.copilot_assume_mapped = true
+      vim.g.copilot_no_tab_map = true
+    end,
+  },
+  {
+    "dense-analysis/ale",
+    event = "User LazyDone",
+    setup = function() end,
+  },
 }

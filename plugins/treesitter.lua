@@ -1,6 +1,31 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  opts = {
-    -- ensure_installed = { "lua" },
+  dependencies = {
+    "JoosepAlviste/nvim-ts-context-commentstring",
   },
+  -- opts = {
+  --   ensure_installed = {
+  --     "astro",
+  --     "css",
+  --     "glimmer",
+  --     "graphql",
+  --     "handlebars",
+  --     "html",
+  --     "javascript",
+  --     "lua",
+  --     "php",
+  --     "python",
+  --     "rescript",
+  --     "scss",
+  --     "svelte",
+  --     "tsx",
+  --     "twig",
+  --     "typescript",
+  --     "vim",
+  --     "vue",
+  --   },
+  --   context_commentstring = {
+  --     enable = true,
+  --   },
+  -- },
 }

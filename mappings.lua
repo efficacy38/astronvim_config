@@ -11,10 +11,13 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(
+          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+        )
       end,
       desc = "Pick to close",
     },
+    ["<leader>U"] = { ":UndotreeToggle<CR>" },
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
@@ -24,5 +27,12 @@ return {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+  },
+  v = {},
+  i = {
+    ["<C-a>"] = { 'copilot#Accept("<CR>")', noremap = true, silent = true, expr = true, replace_keycodes = false },
+    ["<C-n>"] = { "<Plug>(copilot-next)" },
+    ["<C-p>"] = { "<Plug>(copilot-next)" },
+    ["<C-d>"] = { "<Plug>(copilot-dismiss)" },
   },
 }
