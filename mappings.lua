@@ -23,6 +23,18 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<F2>"] = {
+      function()
+        -- write buffer into file
+        vim.cmd "write"
+        -- compile the file if file type is c++/c
+        if vim.bo.filetype == "cpp" or vim.bo.filetype == "c" then
+          -- compile this code
+          vim.cmd "!g++ % -o %:r.o"
+        end
+      end,
+      desc = "Save File and Compile it",
+    },
   },
   t = {
     -- setting a mapping to false will disable it

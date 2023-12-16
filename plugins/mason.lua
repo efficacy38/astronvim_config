@@ -19,7 +19,12 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
-      ensure_installed = { "python" },
+      ensure_installed = {
+        "python",
+        "gopls",
+        "delve",
+      },
+      automatic_installation = true,
     },
   },
 }

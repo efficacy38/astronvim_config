@@ -9,6 +9,12 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  -- themes
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "folke/tokyonight.nvim"},
+  { "morhetz/gruvbox"},
+
+
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -41,8 +47,8 @@ return {
   {
     "github/copilot.vim",
     event = "User LazyDone",
-    setup = function()
-      -- vim.g.copilot_filetypes = { xml = false }
+    init = function()
+      vim.g.copilot_filetypes = { yaml = true, json = true, toml = true }
       vim.g.copilot_assume_mapped = true
       vim.g.copilot_no_tab_map = true
     end,
